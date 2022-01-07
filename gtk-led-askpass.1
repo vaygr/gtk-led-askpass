@@ -1,0 +1,53 @@
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH GTK-LED-ASKPASS 1 "October 4, 2003"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+gtk-led-askpass \- password dialog suitable for use with ssh-add
+.SH SYNOPSIS
+.B gtk-led-askpass
+.RI [ question ]
+
+.SH DESCRIPTION
+.B gtk-led-askpass
+is a GTK+-based passphrase dialog suitable for use with the
+.BR ssh-add (1)
+command. ssh-add will try to execute the commands $SSH_ASKPASS or ssh-askpass
+if the $DISPLAY environment variable is set and its standard input is not a
+terminal. These conditions are automatically true if ssh-add is invoked from
+within
+.BR xsession (5)
+or as part of the GNOME login procedure. Assuming $DISPLAY is set correctly,
+"ssh-add < /dev/null" will work within a terminal.
+.PP
+You can express a preference for gtk-led-askpass over other ssh-askpass
+implementations by setting the $SSH_ASKPASS environment variable.
+.PP
+gtk-led-askpass recognizes Backspace for deleting a character and Control-u
+for deleting all characters.
+.PP
+gtk-led-askpass encodes non-ASCII input characters in UTF-8.
+.SH OPTIONS
+.TP
+.B question
+Optionally, the question to ask the user.
+
+.SH SEE ALSO
+.BR x11-ssh-askpass (1),
+.BR gnome-ssh-askpass (1),
+.BR ssh-askpass (1).
+
+.SH AUTHOR
+Dafydd Harries <daf@muse.19inch.net>

@@ -1,0 +1,39 @@
+2005-05-17  Dafydd Harries  <daf@muse.19inch.net>
+
+	* Version 0.10.
+	* Make the dialog stay on top, so that windows that get opened after
+	  the dialog don't obscure it.
+
+2004-03-04  Dafydd Harries  <daf@muse.19inch.net>
+
+	* Version 0.9.
+	* Makefile:
+	  - use LDFLAGS rather than LIBS
+	  - use cflags and ldflags rather than CFLAGS and LDFLAGS
+
+2004-02-27  Dafydd Harries  <daf@muse.19inch.net>
+
+	* Version 0.8.
+	* Explicitly focus the LED widget for GTK+ 2.4.
+
+2004-02-17  Dafydd Harries  <daf@muse.19inch.net>
+
+	* Version 0.7.
+	* Change led_area_key_press_handler() to use
+	  gtk_accelerator_get_default_mod_mask(). This makes the key handling
+	  much saner. Thanks to Federico Mena Quintero for documenting how to
+	  do this properly.
+	* Split out clearing the widget to a seperate function, clear().
+
+2004-01-14  Dafydd Harries  <daf@muse.19inch.net>
+
+	* Version 0.6.
+	* Make it work with NumLock on. The procedure for getting characters
+	  from key values is all a bit suspect, really. At the moment, we just
+	  ignore keys pressed when Control is held down.
+	* Add reference to ssh-askpass(1) in manpage.
+
+2004-01-09  Dafydd Harries  <daf@muse.19inch.net>
+
+	* Seperate Debian packaging into a seperate patch.
+
